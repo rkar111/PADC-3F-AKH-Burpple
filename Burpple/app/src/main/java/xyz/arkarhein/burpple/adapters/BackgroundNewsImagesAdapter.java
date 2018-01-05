@@ -22,10 +22,7 @@ public class BackgroundNewsImagesAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object object) {
-        if (object instanceof View)
-            return true;
-        else
-            return false;
+        return (view == (View) object);
     }
 
     @Override
