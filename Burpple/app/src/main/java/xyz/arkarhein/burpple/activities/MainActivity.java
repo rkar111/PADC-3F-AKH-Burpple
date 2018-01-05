@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.burpple.R;
 import xyz.arkarhein.burpple.adapters.GuideItemsAdapter;
+import xyz.arkarhein.burpple.adapters.NewsAndTrendingItemAdapter;
 import xyz.arkarhein.burpple.adapters.PromotionItemsAdapter;
 
 
@@ -21,11 +22,15 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_burpple_guides_items)
     RecyclerView rvBurppleGuidesItems;
 
+    @BindView(R.id.rv_news_trending)
+    RecyclerView rvNewsTrending;
+
     @BindView(R.id.btn_search)
     TextView btnSearch;
 
     private PromotionItemsAdapter mPromotionItemsAdapter = new PromotionItemsAdapter();
     private GuideItemsAdapter mGuideItemsAdapter = new GuideItemsAdapter();
+    private NewsAndTrendingItemAdapter mNewsAndTrendingItemAdapter = new NewsAndTrendingItemAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +47,11 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager.HORIZONTAL, false);
         rvBurppleGuidesItems.setLayoutManager(linearLayoutManagerGuide);
         rvBurppleGuidesItems.setAdapter(mGuideItemsAdapter);
+
+        LinearLayoutManager linearLayoutManagerNewsTrending = new LinearLayoutManager(getApplicationContext(),
+                LinearLayoutManager.HORIZONTAL, false);
+        rvNewsTrending.setLayoutManager(linearLayoutManagerNewsTrending);
+        rvNewsTrending.setAdapter(mNewsAndTrendingItemAdapter);
 
     }
 }

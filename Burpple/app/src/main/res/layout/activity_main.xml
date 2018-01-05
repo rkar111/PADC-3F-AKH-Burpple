@@ -213,7 +213,7 @@
                 android:id="@+id/rv_news_trending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_news_trending_see_more"
+                android:layout_below="@id/tv_news_trending"
                 android:layout_marginTop="8dp" />
 
             <TextView
