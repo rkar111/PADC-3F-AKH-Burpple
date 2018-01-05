@@ -40,7 +40,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="12dp"
                     android:fontFamily="@font/hastoler_regular"
                     android:text="@string/heading"
                     android:textColor="@color/full_white"
@@ -51,7 +51,9 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_burpple"
                     android:layout_centerInParent="true"
-                    android:layout_margin="16dp"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    android:layout_marginTop="8dp"
                     android:weightSum="1">
 
                     <FrameLayout
