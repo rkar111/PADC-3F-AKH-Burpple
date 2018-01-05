@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.arkarhein.burpple.viewitems.BackgroundNewsImageViewItem xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/iv_background_news_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foreground="@android:drawable/screen_background_dark_transparent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/steak" />
+
+    <TextView
+        android:id="@+id/tv_background_news_featured"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rounded_amber"
+        android:fontFamily="@font/something_looks_natural_regular"
+        android:padding="4dp"
+        android:text="@string/featured"
+        android:textColor="@color/full_white"
+        android:textSize="32sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_background_news_details"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tv_background_news_featured"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/hastoler_regular"
+        android:text="Best Steak in Town"
+        android:textColor="@color/full_white"
+        android:textSize="40sp" />
+
+</xyz.arkarhein.burpple.viewitems.BackgroundNewsImageViewItem>

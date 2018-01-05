@@ -1,6 +1,7 @@
 package xyz.arkarhein.burpple.activities;
 
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -9,6 +10,7 @@ import android.widget.TextView;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import xyz.arkarhein.burpple.R;
+import xyz.arkarhein.burpple.adapters.BackgroundNewsImagesAdapter;
 import xyz.arkarhein.burpple.adapters.GuideItemsAdapter;
 import xyz.arkarhein.burpple.adapters.NewsAndTrendingItemAdapter;
 import xyz.arkarhein.burpple.adapters.PromotionItemsAdapter;
@@ -25,12 +27,16 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_news_trending)
     RecyclerView rvNewsTrending;
 
+    @BindView(R.id.vp_background_news)
+    ViewPager vpBackgroundNews;
+
     @BindView(R.id.btn_search)
     TextView btnSearch;
 
     private PromotionItemsAdapter mPromotionItemsAdapter = new PromotionItemsAdapter();
     private GuideItemsAdapter mGuideItemsAdapter = new GuideItemsAdapter();
     private NewsAndTrendingItemAdapter mNewsAndTrendingItemAdapter = new NewsAndTrendingItemAdapter();
+    private BackgroundNewsImagesAdapter mBackgroundNewsImagesAdapter = new BackgroundNewsImagesAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +58,8 @@ public class MainActivity extends AppCompatActivity {
                 LinearLayoutManager.HORIZONTAL, false);
         rvNewsTrending.setLayoutManager(linearLayoutManagerNewsTrending);
         rvNewsTrending.setAdapter(mNewsAndTrendingItemAdapter);
+
+        vpBackgroundNews.setAdapter(mBackgroundNewsImagesAdapter);
 
     }
 }
