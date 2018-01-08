@@ -7,20 +7,20 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import xyz.arkarhein.burpple.R;
-import xyz.arkarhein.burpple.viewholders.NewsAndTrendingItemViewHolder;
+import xyz.arkarhein.burpple.viewholders.NewlyOpenedItemsViewHolder;
 
 /**
- * Created by Arkar Hein on 1/5/2018.
+ * Created by Arkar Hein on 1/8/2018.
  */
 
-public class NewsAndTrendingItemAdapter extends RecyclerView.Adapter {
+public class NewlyOpenedItemsAdapter extends RecyclerView.Adapter {
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater = LayoutInflater.from(context);
-        View newsAndTrendingView = inflater.inflate(R.layout.new_and_trending_items, parent, false);
-        NewsAndTrendingItemViewHolder newsAndTrendingItemViewHolder = new NewsAndTrendingItemViewHolder(newsAndTrendingView);
-        return newsAndTrendingItemViewHolder;
+        View newlyOpenedItemsView = inflater.inflate(R.layout.newly_opened_items, parent, false);
+        NewlyOpenedItemsViewHolder newlyOpenedItemsViewHolder = new NewlyOpenedItemsViewHolder(newlyOpenedItemsView);
+        return newlyOpenedItemsViewHolder;
     }
 
     @Override
@@ -30,6 +30,6 @@ public class NewsAndTrendingItemAdapter extends RecyclerView.Adapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 3;
     }
 }

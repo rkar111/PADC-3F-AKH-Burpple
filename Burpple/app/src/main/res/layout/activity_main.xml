@@ -22,7 +22,7 @@
                 android:id="@+id/vp_background_news"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fitsSystemWindows="true"/>
+                android:fitsSystemWindows="true" />
 
             <!--ImageView
                 android:layout_width="match_parent"
@@ -44,38 +44,23 @@
                     android:fontFamily="@font/hastoler_regular"
                     android:text="@string/heading"
                     android:textColor="@color/full_white"
-                    android:textSize="30sp" />
+                    android:textSize="32sp" />
 
-                <LinearLayout
+                <EditText
+                    android:id="@+id/et_search_box"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tv_burpple"
-                    android:layout_centerInParent="true"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_marginTop="8dp"
-                    android:weightSum="1">
+                    android:background="@drawable/rounded"
+                    android:drawableLeft="@drawable/ic_search_grey_24dp"
+                    android:drawablePadding="8dp"
+                    android:hint="Search e.g.Japanese in Orchard"
+                    android:padding="12dp"
+                    android:textColorHint="@color/secondary_text" />
 
-                    <FrameLayout
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1">
-
-                        <TextView
-                            android:id="@+id/btn_search"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:background="@drawable/rounded"
-                            android:drawableLeft="@drawable/ic_search_grey_24dp"
-                            android:drawablePadding="8dp"
-                            android:elevation="4dp"
-                            android:padding="10dp"
-                            android:text="@string/search_hint"
-                            android:textColor="@color/secondary_text"
-                            android:textSize="16sp" />
-
-                    </FrameLayout>
-                </LinearLayout>
             </RelativeLayout>
 
             <android.support.v7.widget.Toolbar
@@ -101,7 +86,7 @@
                 android:id="@+id/tv_featured"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="40dp"
                 android:text="Featured"
                 android:textAllCaps="true"
@@ -113,12 +98,12 @@
                 android:id="@+id/tv_promotions"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignStart="@id/tv_featured"
                 android:layout_below="@id/tv_featured"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Promotions"
                 android:textColor="@color/primary_text"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -127,7 +112,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/tv_promotions"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="16dp"
                 android:text="@string/see_more"
                 android:textColor="@color/primary_dark"
                 android:textSize="16sp" />
@@ -137,14 +122,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_promotions"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/tv_latest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_promotions_items"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="40dp"
                 android:text="Latest"
                 android:textAllCaps="true"
@@ -157,12 +143,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_latest"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:text="Burpple Guides"
                 android:textAllCaps="false"
                 android:textColor="@color/primary_text"
-                android:textSize="20sp"
+                android:textSize="24sp"
                 android:textStyle="bold" />
 
             <TextView
@@ -171,7 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/tv_burpple_guides"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="16dp"
                 android:text="@string/see_more"
                 android:textColor="@color/primary_dark"
                 android:textSize="16sp" />
@@ -181,14 +167,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_burpple_guides"
-                android:layout_marginTop="8dp" />
+                android:layout_marginTop="8dp"
+                android:padding="8dp" />
 
             <TextView
                 android:id="@+id/tv_news_trending_latest"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/rv_burpple_guides_items"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="40dp"
                 android:text="Latest"
                 android:textColor="@color/secondary_text"
@@ -200,35 +187,153 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/tv_news_trending_latest"
-                android:layout_marginLeft="8dp"
+                android:layout_marginLeft="16dp"
                 android:layout_marginTop="8dp"
                 android:text="@string/news_trending"
                 android:textColor="@color/primary_text"
-                android:textSize="20sp" />
+                android:textSize="24sp" />
 
             <TextView
-                android:id="@+id/tv_news_trending_see_more"
+                android:id="@+id/tv_news_and_trending_see_more"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignBottom="@id/tv_news_trending"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp"
+                android:layout_marginRight="16dp"
                 android:text="@string/see_more"
                 android:textColor="@color/primary_dark"
                 android:textSize="16sp" />
 
-            <android.support.v7.widget.RecyclerView
-                android:id="@+id/rv_news_trending"
+            <LinearLayout
+                android:id="@+id/ll_news_and_trending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/tv_news_trending"
-                android:layout_marginTop="8dp" />
+                android:layout_below="@id/tv_news_and_trending_see_more"
+                android:layout_margin="8dp"
+                android:orientation="horizontal"
+                android:weightSum="2">
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:bottomLeftRadius="8dp"
+                    android:bottomRightRadius="8dp"
+                    android:topLeftRadius="8dp"
+                    android:topRightRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_news_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Newly Opened"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_newly_opened"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_news_heading"
+                            android:layout_marginTop="6dp" />
+
+                        <TextView
+                            android:id="@+id/tv_newly_opened_divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_below="@id/rv_newly_opened"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/divider" />
+
+                        <TextView
+                            android:id="@+id/btn_explore_newly_opened"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_newly_opened_divider"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Explore"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_weight="1"
+                    android:bottomLeftRadius="8dp"
+                    android:bottomRightRadius="8dp"
+                    android:topLeftRadius="8dp"
+                    android:topRightRadius="8dp"
+                    app:cardElevation="4dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/tv_trending_venues_heading"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            android:text="Trending Venues"
+                            android:textColor="@color/primary_dark"
+                            android:textSize="16sp"
+                            android:textStyle="bold" />
+
+                        <android.support.v7.widget.RecyclerView
+                            android:id="@+id/rv_trending_venues"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_trending_venues_heading"
+                            android:layout_marginTop="6dp" />
+
+                        <TextView
+                            android:id="@+id/tv_trending_venues_divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="2px"
+                            android:layout_below="@id/rv_trending_venues"
+                            android:layout_marginTop="8dp"
+                            android:background="@color/divider" />
+
+                        <TextView
+                            android:id="@+id/btn_explore_trending_venues"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_trending_venues_divider"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Explore"
+                            android:textColor="@color/secondary_text"
+                            android:textSize="16sp" />
+
+                    </RelativeLayout>
+
+                </android.support.v7.widget.CardView>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/divider_01"
                 android:layout_width="match_parent"
                 android:layout_height="2px"
-                android:layout_below="@id/rv_news_trending"
+                android:layout_below="@id/ll_news_and_trending"
                 android:layout_marginTop="16dp"
                 android:background="@color/divider" />
 

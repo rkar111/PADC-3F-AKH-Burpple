@@ -2,8 +2,8 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="promotions_item_width">160dp</dimen>
     <dimen name="promotions_item_height">180dp</dimen>
-    <dimen name="guide_item_width">150dp</dimen>
-    <dimen name="guide_item_height">150dp</dimen>
-    <dimen name="news_and_trending_item_width">160dp</dimen>
-    <dimen name="news_and_trending_item_height">200dp</dimen>
+    <dimen name="guide_item_width">180dp</dimen>
+    <dimen name="guide_item_height">180dp</dimen>
+    <dimen name="news_and_trending_item_width">180dp</dimen>
+    <dimen name="news_and_trending_item_height">240dp</dimen>
 </resources>
