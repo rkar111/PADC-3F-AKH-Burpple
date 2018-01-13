@@ -5,15 +5,23 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+
+import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import xyz.arkarhein.burpple.BurppleApp;
 import xyz.arkarhein.burpple.R;
-import xyz.arkarhein.burpple.adapters.BackgroundNewsImagesAdapter;
+import xyz.arkarhein.burpple.adapters.BackgroundNewsItemsAdapter;
 import xyz.arkarhein.burpple.adapters.GuideItemsAdapter;
 import xyz.arkarhein.burpple.adapters.NewlyOpenedItemsAdapter;
 import xyz.arkarhein.burpple.adapters.PromotionItemsAdapter;
 import xyz.arkarhein.burpple.adapters.TrendingVanuesItemsAdapter;
+import xyz.arkarhein.burpple.data.vo.data.model.GuidesModel;
+import xyz.arkarhein.burpple.events.LoadedGuidesEvent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -24,11 +32,11 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.rv_burpple_guides_items)
     RecyclerView rvBurppleGuidesItems;
 
-    @BindView(R.id.vp_background_news)
-    ViewPager vpBackgroundNews;
-
     @BindView(R.id.rv_newly_opened)
     RecyclerView rvNewlyOpened;
+
+    @BindView(R.id.vp_background_news)
+    ViewPager vpBackgroundNews;
 
     @BindView(R.id.rv_trending_venues)
     RecyclerView rvTrendingVenues;
@@ -37,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
     private GuideItemsAdapter mGuideItemsAdapter = new GuideItemsAdapter();
     private NewlyOpenedItemsAdapter mNewlyOpenedItemsAdapter = new NewlyOpenedItemsAdapter();
     private TrendingVanuesItemsAdapter mTrendingVanuesItemsAdapter = new TrendingVanuesItemsAdapter();
-    private BackgroundNewsImagesAdapter mBackgroundNewsImagesAdapter = new BackgroundNewsImagesAdapter();
+    private BackgroundNewsItemsAdapter mBackgroundNewsItemsAdapter = new BackgroundNewsItemsAdapter();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -65,7 +73,26 @@ public class MainActivity extends AppCompatActivity {
         rvTrendingVenues.setLayoutManager(linearLayoutManagerTrendingVenues);
         rvTrendingVenues.setAdapter(mTrendingVanuesItemsAdapter);
 
-        vpBackgroundNews.setAdapter(mBackgroundNewsImagesAdapter);
+        vpBackgroundNews.setAdapter(mBackgroundNewsItemsAdapter);
 
+        GuidesModel.getsObjInstance().loadGuides();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        EventBus.getDefault().register(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        EventBus.getDefault().unregister(this);
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onGuidesLoaded(LoadedGuidesEvent event) {
+        Log.d(BurppleApp.LOG_TAG, "onGuidesLoaded" + event.getGuidesList().size());
+        mGuideItemsAdapter.setGuides(event.getGuidesList());
     }
 }

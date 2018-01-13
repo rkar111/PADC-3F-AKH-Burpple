@@ -7,4 +7,5 @@ import android.app.Application;
  */
 
 public class BurppleApp extends Application {
+    public static final  String LOG_TAG="BurppleApp";
 }

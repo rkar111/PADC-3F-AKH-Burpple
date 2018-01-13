@@ -6,13 +6,11 @@ import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-
 /**
- * Created by Arkar Hein on 1/5/2018.
+ * Created by Arkar Hein on 1/12/2018.
  */
 
 public class BackgroundNewsImageViewItem extends FrameLayout {
-
     public BackgroundNewsImageViewItem(@NonNull Context context) {
         super(context);
     }
