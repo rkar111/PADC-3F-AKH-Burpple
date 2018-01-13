@@ -6,6 +6,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import java.util.List;
+
 import xyz.arkarhein.burpple.R;
 import xyz.arkarhein.burpple.viewitems.BackgroundNewsImageViewItem;
 
@@ -14,6 +16,8 @@ import xyz.arkarhein.burpple.viewitems.BackgroundNewsImageViewItem;
  */
 
 public class BackgroundNewsItemsAdapter extends PagerAdapter {
+
+
     @Override
     public int getCount() {
         return 6;

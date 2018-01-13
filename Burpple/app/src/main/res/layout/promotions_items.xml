@@ -29,7 +29,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
-                android:layout_centerVertical="true"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/rounded_amber"
                 android:fontFamily="@font/something_looks_natural_regular"
                 android:padding="4dp"
@@ -42,19 +42,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@id/tv_burpple_exclusive"
-                android:layout_below="@id/tv_burpple_exclusive"
+                android:layout_above="@id/divider_promotions"
                 android:layout_marginTop="8dp"
                 android:text="1-for-1 Scoop"
+                android:textSize="18sp"
                 android:textColor="@color/full_white"
-                android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/divider_promotions"
                 android:layout_width="match_parent"
                 android:layout_height="4px"
+                android:layout_above="@id/tv_promotions_period"
                 android:layout_alignLeft="@id/tv_promotions_detail"
-                android:layout_below="@id/tv_promotions_detail"
                 android:layout_marginTop="8dp"
                 android:alpha="0.8"
                 android:background="@color/divider" />
@@ -64,13 +64,14 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignLeft="@id/divider_promotions"
-                android:layout_below="@id/divider_promotions"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Till 31st Jan 18"
                 android:textAllCaps="true"
-                android:textColor="@color/full_white"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:textColor="@color/full_white" />
 
         </RelativeLayout>
 

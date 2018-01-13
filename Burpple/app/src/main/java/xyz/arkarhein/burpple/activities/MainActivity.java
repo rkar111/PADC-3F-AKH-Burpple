@@ -21,7 +21,9 @@ import xyz.arkarhein.burpple.adapters.NewlyOpenedItemsAdapter;
 import xyz.arkarhein.burpple.adapters.PromotionItemsAdapter;
 import xyz.arkarhein.burpple.adapters.TrendingVanuesItemsAdapter;
 import xyz.arkarhein.burpple.data.vo.data.model.GuidesModel;
+import xyz.arkarhein.burpple.data.vo.data.model.PromotionsModel;
 import xyz.arkarhein.burpple.events.LoadedGuidesEvent;
+import xyz.arkarhein.burpple.events.LoadedPromotionsEvent;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -76,6 +78,7 @@ public class MainActivity extends AppCompatActivity {
         vpBackgroundNews.setAdapter(mBackgroundNewsItemsAdapter);
 
         GuidesModel.getsObjInstance().loadGuides();
+        PromotionsModel.getsObjInstance().loadPromotions();
     }
 
     @Override
@@ -94,5 +97,10 @@ public class MainActivity extends AppCompatActivity {
     public void onGuidesLoaded(LoadedGuidesEvent event) {
         Log.d(BurppleApp.LOG_TAG, "onGuidesLoaded" + event.getGuidesList().size());
         mGuideItemsAdapter.setGuides(event.getGuidesList());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onPromotionsLoaded(LoadedPromotionsEvent event) {
+        mPromotionItemsAdapter.setPromotions(event.getPromotionsList());
     }
 }

@@ -30,6 +30,7 @@
         android:layout_gravity="center"
         android:layout_marginLeft="4dp"
         android:text="Dumpling Land"
-        android:textColor="@color/primary_text" />
+        android:textColor="@color/primary_text"
+        android:textSize="12sp"/>
 
 </LinearLayout>
