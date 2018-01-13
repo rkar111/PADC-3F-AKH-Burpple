@@ -8,36 +8,51 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/iv_background_news_image"
+            android:id="@+id/iv_featured_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:foreground="@android:drawable/screen_background_dark_transparent"
             android:scaleType="centerCrop"
-            android:src="@drawable/steak" />
+            android:src="@drawable/steak"
+            android:tint="#6F000000" />
 
         <TextView
-            android:id="@+id/tv_background_featured"
+            android:id="@+id/tv_featured_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="140dp"
+            android:layout_marginTop="150dp"
             android:background="@drawable/rounded_line"
             android:fontFamily="@font/something_looks_natural_regular"
             android:padding="8dp"
             android:text="@string/featured"
-            android:textColor="@color/light_green"
-            android:textSize="24sp" />
+            android:textColor="@color/full_white"
+            android:textSize="20sp" />
 
         <TextView
+            android:id="@+id/tv_featured_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/tv_background_featured"
+            android:layout_below="@id/tv_featured_heading"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="4dp"
             android:fontFamily="@font/hastoler_regular"
+            android:gravity="center"
             android:text="Newly Opened"
             android:textColor="@color/full_white"
-            android:textSize="32dp" />
+            android:textSize="28sp" />
+
+        <TextView
+            android:id="@+id/tv_featured_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_featured_details"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/hastoler_regular"
+            android:gravity="center"
+            android:text="Good for Health"
+            android:textColor="@color/full_white"
+            android:textSize="24sp" />
 
     </RelativeLayout>
 

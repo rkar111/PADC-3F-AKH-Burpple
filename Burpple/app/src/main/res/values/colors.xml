@@ -23,4 +23,8 @@
 
     <color name="light_green">#8BC34A</color>
 
+    <color name="grey">#757575</color>
+
+    <color name="reddish">#ff1744</color>
+
 </resources>

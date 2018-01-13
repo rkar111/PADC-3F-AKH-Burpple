@@ -20,8 +20,10 @@ import xyz.arkarhein.burpple.adapters.GuideItemsAdapter;
 import xyz.arkarhein.burpple.adapters.NewlyOpenedItemsAdapter;
 import xyz.arkarhein.burpple.adapters.PromotionItemsAdapter;
 import xyz.arkarhein.burpple.adapters.TrendingVanuesItemsAdapter;
+import xyz.arkarhein.burpple.data.vo.data.model.FeaturedModel;
 import xyz.arkarhein.burpple.data.vo.data.model.GuidesModel;
 import xyz.arkarhein.burpple.data.vo.data.model.PromotionsModel;
+import xyz.arkarhein.burpple.events.LoadedFeaturedEvent;
 import xyz.arkarhein.burpple.events.LoadedGuidesEvent;
 import xyz.arkarhein.burpple.events.LoadedPromotionsEvent;
 
@@ -79,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
 
         GuidesModel.getsObjInstance().loadGuides();
         PromotionsModel.getsObjInstance().loadPromotions();
+        FeaturedModel.getsObjInstance().loadFeatures();
     }
 
     @Override
@@ -102,5 +105,10 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onPromotionsLoaded(LoadedPromotionsEvent event) {
         mPromotionItemsAdapter.setPromotions(event.getPromotionsList());
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void onFeaturedLoaded(LoadedFeaturedEvent event) {
+        mBackgroundNewsItemsAdapter.setFeatured(event.getFeaturedList());
     }
 }
