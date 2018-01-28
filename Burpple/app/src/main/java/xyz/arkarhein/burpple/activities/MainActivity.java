@@ -1,6 +1,8 @@
 package xyz.arkarhein.burpple.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.NavigationView;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -23,12 +25,14 @@ import xyz.arkarhein.burpple.adapters.TrendingVanuesItemsAdapter;
 import xyz.arkarhein.burpple.data.vo.data.model.FeaturedModel;
 import xyz.arkarhein.burpple.data.vo.data.model.GuidesModel;
 import xyz.arkarhein.burpple.data.vo.data.model.PromotionsModel;
+import xyz.arkarhein.burpple.delegates.BeforeLoginDelegate;
 import xyz.arkarhein.burpple.events.LoadedFeaturedEvent;
 import xyz.arkarhein.burpple.events.LoadedGuidesEvent;
 import xyz.arkarhein.burpple.events.LoadedPromotionsEvent;
+import xyz.arkarhein.burpple.viewpods.BeforeLoginViewPod;
 
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements BeforeLoginDelegate {
 
     @BindView(R.id.rv_promotions_items)
     RecyclerView rvPromotionItems;
@@ -44,6 +48,11 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.rv_trending_venues)
     RecyclerView rvTrendingVenues;
+
+    @BindView(R.id.navigation_view)
+    NavigationView navigationView;
+
+    private BeforeLoginViewPod vpBeforeLogin;
 
     private PromotionItemsAdapter mPromotionItemsAdapter = new PromotionItemsAdapter();
     private GuideItemsAdapter mGuideItemsAdapter = new GuideItemsAdapter();
@@ -82,6 +91,10 @@ public class MainActivity extends AppCompatActivity {
         GuidesModel.getsObjInstance().loadGuides();
         PromotionsModel.getsObjInstance().loadPromotions();
         FeaturedModel.getsObjInstance().loadFeatures();
+
+        vpBeforeLogin = (BeforeLoginViewPod) navigationView.getHeaderView(0);
+        vpBeforeLogin.setDelegate(this);
+
     }
 
     @Override
@@ -110,5 +123,18 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void onFeaturedLoaded(LoadedFeaturedEvent event) {
         mBackgroundNewsItemsAdapter.setFeatured(event.getFeaturedList());
+    }
+
+    @Override
+    public void onTapLogin() {
+        Intent intent = AccountControlActivity.newIntentLogin(getApplicationContext());
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void onTapRegister() {
+        Intent intent = AccountControlActivity.newIntentRegister(getApplicationContext());
+        startActivity(intent);
     }
 }

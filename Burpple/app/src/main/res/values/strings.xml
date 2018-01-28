@@ -8,4 +8,22 @@
     <string name="burpple_exclusive"><b>Burpple Exclusive</b></string>
     <string name="guide_ads">Best BBQ in Town</string>
     <string name="featured">Featured</string>
+
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+    <string name="login_form"><b>Login Form</b></string>
+    <string name="mobile_or_email">Mobile or Email</string>
+    <string name="password">Password</string>
+    <string name="remember_me">Remember Me</string>
+    <string name="forgot_password"><i><u>Forgot Password?</u></i></string>
+    <string name="create_new_acc"><i><u>Create a New Account</u></i></string>
+
+    <string name="register_form"><b>Registeration Form</b></string>
+    <string name="first_name">First name</string>
+    <string name="last_name">Last name</string>
+    <string name="example_email">Mail@example.com</string>
+    <string name="enter_ph_no">Please enter a phone number</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="terms_and_privacy">I agree to the Terms and Privacy Policy.</string>
 </resources>

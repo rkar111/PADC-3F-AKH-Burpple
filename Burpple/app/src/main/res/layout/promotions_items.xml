@@ -45,7 +45,7 @@
                 android:layout_above="@id/divider_promotions"
                 android:layout_marginTop="8dp"
                 android:text="1-for-1 Scoop"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textColor="@color/full_white"
                 android:textStyle="bold" />
 

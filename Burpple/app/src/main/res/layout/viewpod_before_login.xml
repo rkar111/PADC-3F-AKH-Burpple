@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xyz.arkarhein.burpple.viewpods.BeforeLoginViewPod xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/header_background_height">
+
+    <ImageView
+        android:id="@+id/iv_big"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_background_height"
+        android:scaleType="centerCrop"
+        android:src="@drawable/food_header"
+        android:tint="#6F000000" />
+
+    <Button
+        android:id="@+id/btn_register"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_margin="@dimen/margin_medium_2"
+        android:text="@string/register" />
+
+    <Button
+        android:id="@+id/btn_login"
+        style="@style/accent_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/btn_register"
+        android:layout_alignEnd="@id/btn_register"
+        android:text="@string/login" />
+
+</xyz.arkarhein.burpple.viewpods.BeforeLoginViewPod>

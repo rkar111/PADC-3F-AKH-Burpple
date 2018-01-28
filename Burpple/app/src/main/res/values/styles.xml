@@ -17,4 +17,11 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="accent_button">
+        <item name="android:background">@drawable/rounded_btn</item>
+        <item name="android:paddingLeft">@dimen/margin_medium_3</item>
+        <item name="android:paddingRight">@dimen/margin_medium_3</item>
+        <item name="android:textColor">@color/full_black</item>
+    </style>
+
 </resources>
